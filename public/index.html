@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gustavo Wagon Widman - CV</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 50%, #1f1b16 100%);
+                color: #e4e4e7;
+                line-height: 1.6;
+                display: flex;
+                justify-content: center;
+                padding: 2rem 1rem;
+                min-height: 100vh;
+            }
+
+            .container {
+                max-width: 900px;
+                width: 100%;
+                background: rgba(30, 30, 46, 0.8);
+                backdrop-filter: blur(10px);
+                padding: 3rem;
+                border-radius: 16px;
+                box-shadow:
+                    0 20px 60px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.05);
+                opacity: 0;
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 3rem;
+                padding-bottom: 2rem;
+                border-bottom: 2px solid rgba(251, 146, 60, 0.3);
+                opacity: 0;
+                transform: translateY(-20px);
+                animation: slideDown 0.6s ease-out 0.2s forwards;
+            }
+
+            @keyframes slideDown {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+                background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .header .contact {
+                font-size: 0.95rem;
+                line-height: 1.8;
+                color: #a1a1aa;
+            }
+
+            .header a {
+                color: #fbbf24;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .header a::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #fbbf24, #f97316);
+                transition: width 0.3s ease;
+            }
+
+            .header a:hover::after {
+                width: 100%;
+            }
+
+            .header a:hover {
+                color: #fcd34d;
+            }
+
+            section {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+
+            section:nth-child(2) {
+                animation-delay: 0.3s;
+            }
+            section:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+            section:nth-child(4) {
+                animation-delay: 0.5s;
+            }
+            section:nth-child(5) {
+                animation-delay: 0.6s;
+            }
+            section:nth-child(6) {
+                animation-delay: 0.7s;
+            }
+            section:nth-child(7) {
+                animation-delay: 0.8s;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-top: 2.5rem;
+                margin-bottom: 1rem;
+                letter-spacing: -0.01em;
+                color: #fafafa;
+                position: relative;
+                padding-left: 1rem;
+            }
+
+            h2::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, #fbbf24, #f97316);
+                border-radius: 2px;
+            }
+
+            h3 {
+                font-size: 1.05rem;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 0.75rem;
+                letter-spacing: -0.01em;
+                color: #fb923c;
+                transition: all 0.3s ease;
+            }
+
+            h3:hover {
+                color: #fdba74;
+                transform: translateX(5px);
+            }
+
+            ul {
+                margin-left: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            ul ul {
+                margin-left: 1.5rem;
+                margin-top: 0.5rem;
+            }
+
+            li {
+                font-size: 0.95rem;
+                margin-bottom: 0.6rem;
+                line-height: 1.6;
+                color: #d4d4d8;
+                position: relative;
+                padding-left: 0.5rem;
+                transition: all 0.2s ease;
+            }
+
+            li::marker {
+                color: #fbbf24;
+            }
+
+            li:hover {
+                color: #fafafa;
+                transform: translateX(3px);
+            }
+
+            hr {
+                margin: 2rem 0;
+                border: none;
+                height: 1px;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(251, 191, 36, 0.5) 50%,
+                    transparent
+                );
+            }
+
+            a {
+                color: #fbbf24;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            a:hover {
+                color: #fcd34d;
+            }
+
+            strong {
+                color: #fafafa;
+                font-weight: 600;
+            }
+
+            p {
+                color: #d4d4d8;
+                line-height: 1.6;
+            }
+
+            /* Scroll reveal effect */
+            @media (prefers-reduced-motion: no-preference) {
+                .scroll-reveal {
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition:
+                        opacity 0.6s ease,
+                        transform 0.6s ease;
+                }
+
+                .scroll-reveal.revealed {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Glowing effect on container */
+            .container::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(135deg, #fbbf24, #f97316, #fbbf24);
+                border-radius: 16px;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 0.3s ease;
+                animation: glow 3s ease-in-out infinite;
+            }
+
+            @keyframes glow {
+                0%,
+                100% {
+                    opacity: 0.1;
+                }
+                50% {
+                    opacity: 0.2;
+                }
+            }
+
+            .container {
+                position: relative;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 2rem 1.5rem;
+                }
+
+                .header h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.2rem;
+                }
+            }
+
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #1a1a2e;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(180deg, #fbbf24, #f97316);
+                border-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(180deg, #fcd34d, #fb923c);
+            }
+        </style>
+        <script>
+            // Scroll reveal animation
+            document.addEventListener("DOMContentLoaded", function () {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                };
+
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("revealed");
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll("li, h3").forEach((el) => {
+                    el.classList.add("scroll-reveal");
+                    observer.observe(el);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Gustavo Wagon Widman</h1>
+                <div class="contact">
+                    São Paulo, Brasil | +55 (11) 94136-0118<br />
+                    <a href="mailto:gustavowidman@gmail.com">gustavowidman@gmail.com</a> |
+                    <a href="http://linkedin.com/in/gustavo-widman">linkedin.com/in/gustavo-widman</a> |
+                    <a href="https://github.com/GustavoWidman">github.com/gustavowidman</a>
+                </div>
+            </div>
+
+            <section>
+                <h2>Objetivo</h2>
+                <ul>
+                    <li>Trabalhar como engenheiro de software ou áreas correlatas</li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2>Universidade</h2>
+                <ul>
+                    <li>Bacharelado em Engenharia da Computação - INTELI (Jan 2023 - Dec 2026)</li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2>Experiências</h2>
+
+                <h3>CamelSec | CTO E PENTESTER | Abril 2025 - Presente</h3>
+                <ul>
+                    <li>
+                        Responsável pelo gerenciamento, manutenção e expansão da infraestrutura
+                        tecnológica (Cloud, DevOps).
+                    </li>
+                    <li>Pentest em ambientes web e Active Directory</li>
+                    <li>
+                        Responsável pela inovação tecnológica e gestão da equipe de desenvolvedores,
+                        impulsionando a utilização de tecnologias modernas e robustas como NestJS,
+                        TypeScript, Nix, Rust.
+                    </li>
+                </ul>
+
+                <h3>MW APP Consultoria | DESENVOLVEDOR DE BACKEND REMOTO | Janeiro 2021 - Abril 2025</h3>
+                <ul>
+                    <li>
+                        Responsável pelo desenvolvimento e implementação de sistemas full stack para
+                        clientes de renome (CETESB, CESP, Hunter Douglas).
+                    </li>
+                    <li>
+                        Criação de APIs RESTful utilizando Python (FastAPI) e desenvolvimento de
+                        frontends dinâmicos com React, Vite e TypeScript.
+                    </li>
+                    <li>
+                        Integração com sistemas legados por meio de WebServices e XML, além da manutenção
+                        e gerenciamento de bancos de dados (MSSQL, MySQL) com suporte em C#.
+                    </li>
+                    <li>Implementação de consumidores de mensageria com RabbitMQ.</li>
+                    <li>
+                        Configuração e gerenciamento de pipelines de CI/CD e ambientes DevOps utilizando
+                        GitHub Actions e Docker.
+                    </li>
+                </ul>
+
+                <h3>FREELANCING | DESENVOLVEDOR | Setembro 2023 - Julho 2024</h3>
+                <ul>
+                    <li>
+                        Desenvolvimento de sistemas completos, desde a concepção e codificação até o
+                        deploy em ambientes produtivos.
+                    </li>
+                    <li>
+                        Configuração de domínios (DNS) e automação na emissão de certificados SSL (Let's
+                        Encrypt).
+                    </li>
+                    <li>
+                        Gestão de infraestrutura em cloud e administração de ambientes Linux, sempre com
+                        foco na experiência do usuário (UI/UX).
+                    </li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>
+                        <strong>Linguagens de programação:</strong> Python, JavaScript (TypeScript),
+                        Golang, Java, Rust
+                    </li>
+                    <li>
+                        <strong>Cloud & DevOps:</strong> Docker, GitHub Actions, Nix, Terraform, AWS
+                        (EC2, S3), configuração de DNS, balanceamento de carga, NGINX, administração de
+                        servidores Linux
+                    </li>
+                    <li><strong>Bancos de Dados:</strong> PostgreSQL, MySQL, MSSQL, SQLite</li>
+                    <li>
+                        <strong>Frameworks e Ferramentas:</strong> FastAPI, React, Vite, ShadCN,
+                        TailwindCSS, RabbitMQ, Git, Figma, ROS2
+                    </li>
+                    <li>
+                        <strong>Outras:</strong> Visão Computacional (OpenCV), Engenharia de Prompt
+                        (LLMs), Cibersegurança
+                    </li>
+                    <li><strong>Idiomas:</strong> Inglês Fluente</li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2>Projetos Acadêmicos</h2>
+
+                <h3>
+                    Hospital Sírio Libanês |
+                    <a href="https://inteli-college.github.io/2024-T0008-EC05-G01"
+                        >Montagem automatizada de kits médicos</a
+                    >
+                </h3>
+                <ul>
+                    <li>Desenvolvimento de interface web para controle e monitoramento dos kits.</li>
+                    <li>
+                        Integração com hardware (processos de soldagem e programação de baixo nível).
+                    </li>
+                    <li>
+                        Elaboração de documentação técnica detalhada e estudo de viabilidade de modelo de
+                        negócios.
+                    </li>
+                </ul>
+
+                <h3>
+                    Atvos |
+                    <a href="https://inteli-college.github.io/2024-1B-T08-EC06-G01"
+                        >Integração de Robótica com Visão computacional</a
+                    >
+                </h3>
+                <ul>
+                    <li>
+                        Desenvolvimento de soluções orientadas ao negócio com foco em usabilidade para
+                        usuários sem conhecimentos técnicos avançados.
+                    </li>
+                    <li>
+                        Criação de interface web e integração com diversos sensores (temperatura,
+                        proximidade) para garantir a segurança e eficiência na movimentação do robô.
+                    </li>
+                    <li>Utilização do ROS2 para controle do robô.</li>
+                    <li>
+                        Implementação de modelos de visão computacional para reconhecimento e
+                        processamento de imagens.
+                    </li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2>Atividades Extracurriculares</h2>
+
+                <h3>Liga de Cibersegurança do INTELI (EchoSec)</h3>
+                <ul>
+                    <li><strong>Presidente:</strong> Janeiro 2024 – Julho 2024</li>
+                    <li><strong>Membro:</strong> Desde Setembro 2023</li>
+                    <li>
+                        Organização e preparação de aulas práticas e dinâmicas, além de treinamentos
+                        focados em cibersegurança.
+                    </li>
+                    <li>
+                        Participação ativa em competições de CTF (Capture the Flag), contribuindo para
+                        que a equipe fosse classificada entre as cinco melhores do cenário brasileiro
+                        (CTFtime).
+                    </li>
+                    <li>Habilidades usadas: Linux, Cibersegurança, Gestão de Pessoas</li>
+                </ul>
+
+                <h3>Competições:</h3>
+                <ul>
+                    <li>
+                        <strong>N00bzunit3d CTF:</strong> Participação em competição com 967 equipes
+                        (Colocação: 95º) – Julho de 2024
+                    </li>
+                    <li><strong>CTF da Universidade Nacional de Singapura:</strong> Maio de 2024</li>
+                    <li><strong>INTELI BlockChain Hackathon:</strong> Julho de 2023</li>
+                </ul>
+
+                <h3>Projetos pessoais:</h3>
+                <ul>
+                    <li>
+                        <a href="https://github.com/GustavoWidman/udp-impl">udp-impl</a>
+                        <ul>
+                            <li>Implementação de baixo nível do protocolo UDP em Rust</li>
+                            <li>
+                                Foco em otimização do gerenciamento de memória e do cálculo do 'Internet
+                                Checksum'
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/GustavoWidman/chatbot">chatbot</a>
+                        <ul>
+                            <li>
+                                Assistente customizável com IA (WIP, já operacional), compatível com
+                                provedores como Gemini, OpenAI, Anthropic, etc.
+                            </li>
+                            <li>Integração com a API do Discord para interface interativa.</li>
+                            <li>
+                                Desenvolvido em Rust, explorando chats imersivos com memórias de longo
+                                prazo por meio de técnicas avançadas de engenharia de prompt e RAG.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/GustavoWidman/screenium">screenium</a>
+                        <ul>
+                            <li>
+                                Recriação moderna do "<a href="https://www.gnu.org/software/screen"
+                                    >GNU screen</a
+                                >" em Go, focada em comunicação entre processos, histórico de terminal e
+                                programação de baixo nível.
+                            </li>
+                            <li>Oferece uma CLI leve e intuitiva para uma experiência aprimorada.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/GustavoWidman/nix">Infraestrutura Cloud Pessoal</a>
+                        <ul>
+                            <li>Serviço de encurtamento de links.</li>
+                            <li>Hospedagem de arquivos</li>
+                            <li>Serviço de e-mail com meu domínio próprio.</li>
+                            <li>
+                                Hospedagem de servidores de jogos (ex.: Minecraft, Terraria) para
+                                entretenimento próprio.
+                            </li>
+                            <li>
+                                Implementação de serviço de DNS pessoal com bloqueio de anúncios e
+                                suporte a DoH (DNS over HTTPS) ou DoT (DNS over TLS), prezando
+                                privacidade e segurança.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p style="font-size: 0.95rem; margin-top: 1rem">
+                    Outros projetos e iniciativas podem ser encontrados em meu
+                    <a href="https://github.com/GustavoWidman">GitHub</a>.
+                </p>
+            </section>
+        </div>
+    </body>
+</html>
